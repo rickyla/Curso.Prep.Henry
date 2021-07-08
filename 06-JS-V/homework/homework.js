@@ -8,12 +8,28 @@ function crearUsuario() {
   // {{nombre}} debe ser el nombre definido en cada instancia
   // Devuelve la clase
   // Tu código:
+  function Usuario(usuario,nombre,email,password){
+    this.nombre=nombre;
+    this.usuario=usuario;
+    this.email=email;
+    this.password=password;
+    };
+
+    Usuario.__prototype__.saludar()=function(){
+      return ("hola mi nombre es" , this.nombre);
+    }
+    return Usuario;
 }
+
 
 function agregarMetodoPrototype(Constructor) {
   // Agrega un método al Constructor del `prototype`
   // El método debe llamarse "saludar" y debe devolver la string "Hello World!"
   // Tu código:
+  Usuario.__prototype__.saudar(){
+    return ("Hello World");
+  }
+
 }
 
 function agregarStringInvertida() {
@@ -22,6 +38,10 @@ function agregarStringInvertida() {
   // Ej: 'menem'.reverse() => menem
   // 'toni'.reverse() => 'inot'
   // Pista: Necesitarás usar "this" dentro de "reverse"
+
+  String.__prototype__.reverse(string){
+    return this.string.reverse();
+  }
 }
 
 // ---------------------------------------------------------------------------//
@@ -36,8 +56,11 @@ function agregarStringInvertida() {
     //  }
 
   class Persona {
-    constructor(/*Escribir los argumentos que recibe el constructor*/) {
-      // Crea el constructor:
+    constructor(Nombre,Apellido,Edad,Domicilio) {
+      this.Nombre=Nombre;
+      this.Apellido=Apellido;
+      this.Edad=Edad;
+      this.Domicilio=Domicilio;
 
     }
 }
@@ -46,11 +69,15 @@ function crearInstanciaPersona(nombre, apellido, edad, dir) {
   //Con esta función vamos a crear una nueva persona a partir de nuestro constructor de persona (creado en el ejercicio anterior)
   //Recibirá los valores "Juan", "Perez", 22, "Saavedra 123" para sus respectivas propiedades
   //Devolver la nueva persona creada
+  return ["Juan" , "Perez" , 22 , "Saavedra 123"];
 }
   
 function agregarMetodo() {
   //La función agrega un método "datos" a la clase Persona que toma el nombre y la edad de la persona y devuelve: 
   //Ej: "Juan, 22 años"
+  Persona.__prototype__.datos=function(){
+    return (this.nombre  + ", " + this.edad + " años");
+  }
 }
   
 
